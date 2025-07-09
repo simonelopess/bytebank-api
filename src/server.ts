@@ -18,6 +18,10 @@ const swaggerOptions = {
     },
     servers: [
       {
+        url: process.env.RENDER_EXTERNAL_URL || `http://localhost:${port}`,
+        description: 'Servidor de produção',
+      },
+      {
         url: `http://localhost:${port}`,
         description: 'Servidor de desenvolvimento',
       },
@@ -29,7 +33,11 @@ const swaggerOptions = {
 const specs = swaggerJsdoc(swaggerOptions);
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: '*', // Permite todas as origens
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
