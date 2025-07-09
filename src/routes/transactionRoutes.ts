@@ -48,7 +48,7 @@ router.get('/transaction-types', TransactionController.getTransactionTypes);
  *               type:
  *                 type: string
  *                 enum: [deposit, debit]
- *                 description: Tipo da transação
+ *                 description: Tipo da transação (apenas deposit ou debit são aceitos)
  *               amount:
  *                 type: number
  *                 description: Valor da transação

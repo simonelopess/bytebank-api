@@ -11,6 +11,11 @@ export class TransactionService {
       throw new Error('ID do usuário é obrigatório');
     }
 
+    // Validação do tipo de transação
+    if (!transactionData.type || !['deposit', 'debit'].includes(transactionData.type)) {
+      throw new Error('Tipo de transação deve ser "deposit" ou "debit"');
+    }
+
     return TransactionModel.create(transactionData);
   }
 

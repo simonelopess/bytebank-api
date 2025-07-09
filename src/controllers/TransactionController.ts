@@ -15,6 +15,14 @@ export class TransactionController {
         return;
       }
 
+      // Validação específica do tipo
+      if (!['deposit', 'debit'].includes(type)) {
+        res.status(400).json({ 
+          error: 'Tipo de transação deve ser "deposit" ou "debit"' 
+        });
+        return;
+      }
+
       const transaction = TransactionService.createTransaction({ type, amount, userId });
       
       res.status(201).json(transaction);
