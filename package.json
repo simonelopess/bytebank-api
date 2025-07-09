@@ -1,0 +1,36 @@
+{
+  "name": "bytebank-api",
+  "version": "1.0.0",
+  "description": "Bytebank is app that helps you to view your transaction and have more balance with your money.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts",
+    "start": "ts-node src/server.ts",
+    "build": "tsc"
+  },
+  "keywords": [
+    "bytebank",
+    "fiap"
+  ],
+  "author": "Group 1",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "nodemon": "^3.1.10",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
